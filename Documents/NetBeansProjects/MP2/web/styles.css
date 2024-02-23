@@ -1,0 +1,155 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : 12 6, 23, 6:43:22 PM
+    Author     : justi
+*/
+
+body
+{
+    background-color: #FFCB9A;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 70vh;
+    margin: 0;
+}
+
+h1
+{
+    font-family: 'Abril-Fatface', serif;
+    font-size: 70px;
+    color: #314E52;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.login-as
+{
+    margin-top: -30px;   
+    font-size: 18px;
+    text-align: center;
+}
+
+.button-container 
+{
+    position: relative;
+    display: inline-block;
+}
+
+button
+{
+    color: white;
+    background-color: #F2A154;
+    font-family: 'Open-Sans', serif;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-align: left;
+    padding-left: 20px;
+    position: relative;
+    z-index: 2
+}
+
+.button 
+{
+    width: 250px;
+    height: 50px;
+    font-size: 20px;
+}
+
+.smol-button 
+{
+    width: 150px;
+    height: 30px;
+    font-size: 14px;
+}
+
+button:hover 
+{
+    background-color: #E1853E;
+}
+
+.square
+{
+    width: 250px;
+    height: 50px;
+    background-color: #292929;
+    position: absolute;
+    top: 30px;
+    left: 20px;
+}
+
+.smol-square
+{
+    width: 150px;
+    height: 30px;
+    background-color: #292929;
+    position: absolute;
+    top: 28px;
+    left: 10px;
+}
+
+.Credit-square
+{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 150px;
+    background-color: #314E52;
+}
+
+.credit-text 
+{
+    position: absolute;
+    bottom: 35px;
+    left: 30px;
+    color: white;
+}
+
+.credit-text p 
+{
+    margin: 5px 0;
+    font-size: 15px;
+}
+
+.credit-text .indented 
+{
+    margin-left: 20px;
+}
+
+.credit-text .Bold 
+{
+    font-weight: bold;
+}
+
+.circle
+{
+    width: 250px;
+    height: 20px;
+    border: 1px solid #ccc;
+    border-radius: 30px;
+    padding: 8px;
+    margin-bottom: 10px;
+    position: absolute;
+    top: 2px;
+    left: 5px;
+    background-color: #9B9595;
+    z-index: -1;
+}
+
+input[type="text"], input[type="password"] 
+{
+    border-radius: 20px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+    width: 250px;
+    z-index: 1;
+}
+
+.dropdown{
+    
+}
