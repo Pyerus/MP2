@@ -9,8 +9,12 @@
         </init-param>
         <init-param>
             <param-name>password</param-name>
-            <param-value>1</param-value>
+            <param-value>pass1</param-value>
         </init-param>
+    </servlet>
+    <servlet>
+        <servlet-name>AddToDoServlet</servlet-name>
+        <servlet-class>Servlets.AddToDoServlet</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>AdminPage</servlet-name>
@@ -28,9 +32,17 @@
         <servlet-name>SignUp</servlet-name>
         <servlet-class>Servlets.SignUp</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>DeleteUser</servlet-name>
+        <servlet-class>Servlets.DeleteUser</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>UserPage</servlet-name>
         <url-pattern>/UserPage</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AddToDoServlet</servlet-name>
+        <url-pattern>/AddToDoServlet</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>AdminPage</servlet-name>
@@ -40,9 +52,37 @@
         <servlet-name>SignUp</servlet-name>
         <url-pattern>/SignUp</url-pattern>
     </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DeleteUser</servlet-name>
+        <url-pattern>/DeleteUser</url-pattern>
+    </servlet-mapping>
     <session-config>
         <session-timeout>
             30
         </session-timeout>
     </session-config>
+    <context-param>
+        <param-name>AppName</param-name>
+        <param-value>Facere</param-value>
+    </context-param>
+    <context-param>
+        <param-name>CREATORS</param-name>
+        <param-value>CREATORS:</param-value>
+    </context-param>
+    <context-param>
+        <param-name>Ralph Justin Magbojos</param-name>
+        <param-value>Ralph Justin Magbojos</param-value>
+    </context-param>
+    <context-param>
+        <param-name>Quincy Faye Tendilla</param-name>
+        <param-value>Quincy Faye Tendilla</param-value>
+    </context-param>
+    <context-param>
+        <param-name>Sean Pyrus Novero</param-name>
+        <param-value>Sean Pyrus Novero</param-value>
+    </context-param>
+    <error-page>
+        <error-code>404</error-code>
+        <location>/Error404.jsp</location>
+    </error-page>
 </web-app>

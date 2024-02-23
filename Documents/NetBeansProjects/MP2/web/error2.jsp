@@ -1,12 +1,12 @@
 <%-- 
-    Document   : UserType
-    Created on : 12 5, 23, 12:30:43 PM
-    Author     : Erebus
+    Document   : error2
+    Created on : 12 9, 23, 7:52:07 PM
+    Author     : justi
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-
+<html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>User Login</title>
@@ -17,37 +17,42 @@
             <p class ="AppName" id="AppName"><% out.print(getServletContext().getInitParameter("AppName")); %></p>
         </header>
     </head>
-        <body>
+    <body>
             <h1>Login</h1>
             <h2 class="login-as">As a User</h2>
-           
-            <%
-        String pickedUsername = (String) application.getAttribute("pickedUsername");
-        String pickedPassword = (String) application.getAttribute("pickedPassword");
-        %>
+            
+            <h2 class="error">Please Input a username and password!</h2>
+            
             <form action="UserPage" method="post"> 
-                <div class="button-container">
-                    <label for="username"><input id="username" name="username" type="text" placeholder="Username"/></label><br>
+            <div class="button-container">
+                    <label for="username"><input id="username" name="username" type="text" placeholder="Username" required/></label><br>
                     <div class="circle"></div>
-                </div>
-                    <br>      
-                <div class="button-container">
-                    <label for="password"><input id="password" name="password" type="password"  placeholder="Password"/></label><br>
+            </div>
+                <br>      
+            <div class="button-container">
+                    <label for="password"><input id="password" name="password" type="password"  placeholder="Password" required/></label><br>
                     <div class="circle"></div>
-                </div>
+            </div>
                 <br>
-                <div class="form-buttons">
-                    <div class="button-container">
-                        <button class="smol-button" type="submit">Log In</button>
-                    <div class="smol-square"></div>
-                    </div>
-
-                    <div class="button-container">
-                        <button class="smol-button" type="button" onclick="window.location.href='sign-up.jsp'">Sign Up</button>
-                        <div class="smol-square"></div>
-                    </div>
-                </div>
+            </form>  
+            
+            <form>
+        <div class="button-container">
+                <div class="button-container">
+                    <button class="smol-button" type="enter" formaction="user.jsp">Log In</button>
+                    <div class="smol-square"></div> 
+            </div>
+        </div>
             </form>
+
+            <form>
+        <div class="button-container">
+                <button class="smol-button" type="enter" formaction="user.jsp">Sign Up</button>
+                <div class="smol-square"></div>
+        </div>
+            </form>
+            
+              
         <div class="Credit-square">
             <div class="credit-text">
                 <footer>
