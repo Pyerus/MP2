@@ -3,8 +3,8 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to c
 Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css to edit this template
 */
 /* 
-    Created on : 12 6, 23, 6:43:22 PM
-    Author     : justi
+    Created on : 12 9, 23, 4:13:59 PM
+    Author     : Faye
 */
 header
 {
@@ -19,7 +19,7 @@ body
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 70vh;
+    height: 72vh;
     margin: 0;
 }
 
@@ -39,23 +39,13 @@ h1
     text-align: center;
 }
 
-.button-container 
-{
-    position: relative;
-    display: inline-block;
-}
-
 button
 {
-    color: white;
+    color: black;
     background-color: #F2A154;
     font-family: 'Open-Sans', serif;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    text-align: left;
-    padding-left: 20px;
+    text-align: center;
     position: relative;
-    z-index: 2
 }
 
 .button 
@@ -75,26 +65,6 @@ button
 button:hover 
 {
     background-color: #E1853E;
-}
-
-.square
-{
-    width: 250px;
-    height: 50px;
-    background-color: #292929;
-    position: absolute;
-    top: 30px;
-    left: 20px;
-}
-
-.smol-square
-{
-    width: 150px;
-    height: 30px;
-    background-color: #292929;
-    position: absolute;
-    top: 28px;
-    left: 10px;
 }
 
 .Credit-square
@@ -150,9 +120,7 @@ input[type="text"], input[type="password"]
     border-radius: 20px;
     padding: 8px;
     border: 1px solid #ccc;
-    margin-bottom: 10px;
     width: 250px;
-    z-index: 1;
 }
 
 .delete 
@@ -175,82 +143,60 @@ header .AppName {
     color: #314E52;
 }
 
-.form-buttons 
+.settings-box
 {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 20px;
-}
-
-.error
-{
-    color: #C22033;
-    font-size: 15px;
-}
-
-.remove-bullets
-{
-    list-style: none;
-    padding: 0; 
-    margin: 0;
-}
-
-.usernames-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    background-color: #ffffff; 
-    border: 1px solid #ccc; 
-    border-radius: 10px; 
-    padding: 10px; 
-    margin-top: 20px; 
-    width: 500px; 
     position: relative;
+    width: 85%;
+    height: 100%;
+    background-color: #314E52;
+    border-radius: 40px;
 }
 
-.delete-button {
+.settings-section
+{
+    width: 250px;
+    height: 50px;
+    background-color: #f2a154;
+    position: relative;
+    top: 50px;
+    left: 50px;
+    border: solid black;
+    box-shadow: 20px 10px;
+}
+
+.settings-sub
+{
+    width: 200px;
+    height: 40px;
+    background-color: #f2a154;
+    position: relative;
+    top: 50px;
+    left: 150px;
+    border-radius: 0 60px 0 60px;
+    border: solid black;
+    box-shadow: 20px 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.settings-label
+{
     color: black;
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
-    align-self: flex-end;
-    margin-left: 300px;
-}
-
-
-.delete-button:hover {
-    background-color: #ffffff; 
-}
-.user-header {
-    margin: 0 auto;
-    font-size: 50px;
+    text-align: center;
     font-family: 'Open-Sans', serif;
-
+    margin-top: 10px;
+    position: relative;
+    z-index: 2
 }
 
-.back-button{
-    background-color: transparent;
-    color: black;
-    border: transparent;
+.inline
+{
+    display: inline;
 }
 
-.back-button:hover{
-    background-color: transparent; 
-}
-
-.back-button img{
-    width: 60px;
-    height:60px;
-}
-
-header .back-button {
-    margin-right: 20px;
-}
-
-.username{
-    font-size: 20px;
-    margin-left: 50px;
-    margin-bottom: 10px;
-    margin-right: 10px;
+.change-pass
+{
+    position: absolute;
+    top: 130px;
+    left: 450px;
 }

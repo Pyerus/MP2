@@ -5,15 +5,17 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>User Login</title>
         <link rel="stylesheet" href="styles.css" />
+        
+        <header>
+            
+            <p class ="AppName" id="AppName"><% out.print(getServletContext().getInitParameter("AppName")); %></p>
+        </header>
     </head>
     <body>
             <h1>Login</h1>
             <h2 class="login-as">As a User</h2>
             
-            <div class="error">
-            <h2>Error</h2>
-            </div>
-         
+            <h2 class="error">Incorrect Username or Password. Please try again!</h2>
             
             <form action="UserPage" method="post"> 
             <div class="button-container">
@@ -47,10 +49,12 @@
               
         <div class="Credit-square">
             <div class="credit-text">
-                <p class="Bold">CREATORS:</p>
-                <p class="indented">Ralph Justin Magbojos</p>
-                <p class="indented">Quincy Faye Tendilla</p>
-                <p class="indented">Sean Pyrus Novero</p>
+                <footer>
+                    <p class ="Bold" id="Bold"><% out.print(getServletContext().getInitParameter("CREATORS")); %></p>
+                    <p class ="indented" id="indented"><% out.print(getServletContext().getInitParameter("Ralph Justin Magbojos")); %></p>
+                    <p class ="indented" id="indented"><% out.print(getServletContext().getInitParameter("Quincy Faye Tendilla")); %></p>
+                    <p class ="indented" id="indented"><% out.print(getServletContext().getInitParameter("Sean Pyrus Novero")); %></p>
+                </footer>
             </div>
         </div>
     </body>

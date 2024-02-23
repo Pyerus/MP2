@@ -1,53 +1,57 @@
 package Servlets;
+
 import java.io.*;
 import java.util.*;
 import javax.servlet.*;
 import javax.servlet.http.*;
 
-
-public class UserPage extends HttpServlet{
-       String username;
-       String password;
-       
-       @Override
-       public void init(ServletConfig config) throws ServletException{
-           super.init(config);
-           username = getServletConfig().getInitParameter("username");
-           password = getServletConfig().getInitParameter("password");
-       }
-
-       @Override
-       protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
-                String tryUsername = request.getParameter("username");
-                String tryPassword = request.getParameter("password");
-                
-                if (username.equals(tryUsername) && password.equals(tryPassword)) {
-                response.sendRedirect("homepage_user.jsp");
-                return;
-                }
-                
-                if(checkUserPass(tryUsername, tryPassword)){
-                    response.sendRedirect("homepage_user.jsp");
-                }
-
-                else{
-                     response.sendRedirect("error1.jsp");
-                }
- }
-       
-       
-       private boolean checkUserPass (String username, String password){
-           ServletContext servletContext = getServletContext();
-           HashMap<String, String> userAccount = (HashMap<String, String>) servletContext.getAttribute("userAccount");
-           
-           if (userAccount != null && userAccount.containsKey(username) && userAccount.get(username).equals(password)) {
-        return true;
+class AuthenticationException extends Exception {
+    public AuthenticationException(String message) {
+        super(message);
     }
-           String checkUsername = getServletConfig().getInitParameter("username");
-           String checkPassword = getServletConfig().getInitParameter("password");
-           
-           return (checkUsername != null && checkPassword != null && checkUsername.equals(username) && checkPassword.equals(password));
-       }
 }
 
+class NullValueException extends Exception {
+    public NullValueException(String message) {
+        super(message);
+    }
+}
 
+public class UserPage extends HttpServlet{
+       @Override
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String tryUsername = request.getParameter("username");
+        String tryPassword = request.getParameter("password");
+
+        try {
+            authenticateUser(tryUsername, tryPassword);
+            response.sendRedirect("homepage_user.jsp");
+        } catch (AuthenticationException e) {
+            response.sendRedirect("error1.jsp");
+        } catch (NullValueException e) {
+            response.sendRedirect("error2.jsp");
+        }
+    }
+
+    private void authenticateUser(String username, String password) throws AuthenticationException, NullValueException {
+        if (username == null || password == null || username.isEmpty() || password.isEmpty()) {
+            throw new NullValueException("Username or password cannot be empty.");
+        }
+
+        ServletContext servletContext = getServletContext();
+        HashMap<String, String> userAccount = (HashMap<String, String>) servletContext.getAttribute("userAccount");
+
+        if (userAccount != null && userAccount.containsKey(username) && userAccount.get(username).equals(password)) {
+            return;
+        }
+
+        String checkUsername = getServletConfig().getInitParameter("username");
+        String checkPassword = getServletConfig().getInitParameter("password");
+
+        if (checkUsername != null && checkPassword != null && checkUsername.equals(username) && checkPassword.equals(password)) {
+            return;
+        }
+
+        throw new AuthenticationException("Invalid username or password.");
+    }
+}

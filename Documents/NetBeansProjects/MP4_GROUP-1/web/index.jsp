@@ -5,6 +5,10 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="styles.css" />
+        
+        <header>
+            <p class ="AppName" id="AppName"><% out.print(getServletContext().getInitParameter("AppName")); %></p>
+        </header>
     </head>
     <body>
         <h1>LOG IN</h1>
@@ -33,10 +37,12 @@
         
         <div class="Credit-square">
             <div class="credit-text">
-                <p class="Bold">CREATORS:</p>
-                <p class="indented">Ralph Justin Magbojos</p>
-                <p class="indented">Quincy Faye Tendilla</p>
-                <p class="indented">Sean Pyrus Novero</p>
+                <footer>
+                    <p class ="Bold" id="Bold"><% out.print(getServletContext().getInitParameter("CREATORS")); %></p>
+                    <p class ="indented" id="indented"><% out.print(getServletContext().getInitParameter("Ralph Justin Magbojos")); %></p>
+                    <p class ="indented" id="indented"><% out.print(getServletContext().getInitParameter("Quincy Faye Tendilla")); %></p>
+                    <p class ="indented" id="indented"><% out.print(getServletContext().getInitParameter("Sean Pyrus Novero")); %></p>
+                </footer>
             </div>
         </div>
     </body>

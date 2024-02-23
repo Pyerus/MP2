@@ -1,4 +1,5 @@
 package Servlets;
+
 import java.io.*;
 import java.util.*;
 import javax.servlet.*;
@@ -28,4 +29,3 @@ public class SignUp extends HttpServlet {
         response.sendRedirect("user.jsp");
     }
 }
-
